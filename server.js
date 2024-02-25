@@ -84,6 +84,8 @@ app.post("/", async (req, res) => {
 });
 
 //Starting Server
-app.listen(Http_port, () => {
-    console.log(`Server running on port ${Http_port}`);
-});
+// app.listen(Http_port, () => {
+//     console.log(`Server running on port ${Http_port}`);
+// });
+
+module.exports = app;
