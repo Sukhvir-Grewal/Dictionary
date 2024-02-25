@@ -1,0 +1,58 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1708888878855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1708888911682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-** \n\\ No newline at end of file\n+## \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708888933822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-## \n\\ No newline at end of file\n+## Dictionary Node \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708888942358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-## Dictionary Node \n\\ No newline at end of file\n+## Dictionary NodeJs App\r\n"
+                },
+                {
+                    "date": 1708888948380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-## Dictionary NodeJs App\r\n+## Dictionary Express App\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708888990403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-## Dictionary Express App\n\\ No newline at end of file\n+## Dictionary Express App\r\n+\r\n+Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708889010406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n ## Dictionary Express App\r\n \r\n-Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and \n\\ No newline at end of file\n+Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and host it online, still works perfectly fine\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708889025966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n ## Dictionary Express App\r\n \r\n-Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and host it online, still works perfectly fine\n\\ No newline at end of file\n+Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and host it online, still works perfectly fine.  \r\n+\r\n"
+                },
+                {
+                    "date": 1708889032367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n ## Dictionary Express App\r\n \r\n Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and host it online, still works perfectly fine.  \r\n \r\n+### \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708889043284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n ## Dictionary Express App\r\n \r\n Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and host it online, still works perfectly fine.  \r\n \r\n-### How i came up \n\\ No newline at end of file\n+### How i came up w\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1708889133954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n ## Dictionary Express App\r\n \r\n Hi, everyone this project is one of my starting projects when i was in collage, thought i can do some touch up and host it online, still works perfectly fine.  \r\n \r\n-* This Node app basically works with an api calls, two basically. The first one is `https://api.dictionaryapi.dev/api/v2/entries/en/`\n\\ No newline at end of file\n+* This Node app basically works with an api calls, two basically. The first one is `https://api.dictionaryapi.dev/api/v2/entries/en/` to get the meaning of the word\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1708888878855,
+            "name": "Commit-0",
+            "content": "** "
+        }
+    ]
+}

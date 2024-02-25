@@ -46,17 +46,17 @@
 
     const buttons = document.querySelectorAll(".btn");
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove "active-btn" class from all buttons
-        buttons.forEach(btn => {
-            btn.classList.remove("active-btn");
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove "active-btn" class from all buttons
+            buttons.forEach(btn => {
+                btn.classList.remove("active-btn");
+            });
+            
+            // Add "active-btn" class to the clicked button
+            button.classList.add("active-btn");
         });
-        
-        // Add "active-btn" class to the clicked button
-        button.classList.add("active-btn");
     });
-});
 
 
     // These three line can make the first letter of the word to upperCase
