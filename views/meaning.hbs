@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" 
+                  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+                  crossorigin="anonymous">
+                  
+{{#if wordName}}
+    <div class="titleContainer">
+        <h2 class="wordName">{{wordName}}</h2>
+        <audio id="audio" src={{audio}}></audio>
+        <span
+            class="glyphicon glyphicon-volume-up playbutton"
+            onclick="playAudio()"
+        ></span>
+    </div>
+
+    <div class="buttons">
+        <button class="btn" onclick="showMeanings()">Meaning</button>
+        <button class="btn" onclick="showSynonyms()">Synonyms</button>
+        <button class="btn" onclick="showAntonyms()">Antonyms</button>
+    </div>
+    <div class="bodyContainer">
+        {{#each meanings}}
+            <div class="meaningContainer">
+                <span class="count"><b>{{count}}&nbsp;&nbsp;</b></span>
+                <p class="meaningParagraph">{{this.meaning}}</p><br />
+            </div>
+                {{#if this.examples}}
+                    <div class="meaningParagraph">
+                        <b><span class="eg">Eg.</span></b>
+                        <p>{{this.examples}}</p><br />
+                    </div>
+                {{/if}}
+        {{/each}}
+    </div>
+
+{{else}}
+    {{!-- <div class="titleContainer">
+        <h2 class="wordName">{{wordName}}</h2>
+    </div>
+    <div class="bodyContainer">
+        <p>{{error}}</p>
+    </div> --}}
+{{/if}}
+
+
+<script>
+
+    const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove "active-btn" class from all buttons
+        buttons.forEach(btn => {
+            btn.classList.remove("active-btn");
+        });
+        
+        // Add "active-btn" class to the clicked button
+        button.classList.add("active-btn");
+    });
+});
+
+
+    // These three line can make the first letter of the word to upperCase
+    var toUpper = document.querySelector('.wordName').innerHTML;
+    toUpper = toUpper[0].charAt(0).toUpperCase() + toUpper.slice(1);
+    document.querySelector('.wordName').innerHTML = toUpper;
+
+    //This was to fix a small bug to reset the counter whenever the 
+    //page is refreshed!
+    window.onbeforeunload = function(){
+        {{countReset}}
+    }
+
+   // Arrays to store synonyms and antonyms
+    var synonyms = [];
+    var antonyms = [];
+
+    async function loadData(){    
+        var url = `https://api.api-ninjas.com/v1/thesaurus?word=`;
+        const apiKey = "nIYHxcdaMxThcM2g5E+3mg==72UdANVwwVN7ZS1g"
+
+        try {
+            const response = await fetch(url + '{{wordName}}', {
+                method: 'GET',
+                headers: {
+                'X-Api-Key': apiKey,
+                'Accept': 'application/json'
+                }
+            });
+            const data = await response.json();
+            if(data.synonyms) 
+                synonyms = data.synonyms;
+            if(data.antonyms) 
+                antonyms = data.antonyms;
+
+        }   catch(error) {
+                //Just for debugging
+                console.error(error);
+            }
+    }
+
+    function showMeanings(){
+        document.querySelector('.bodyContainer').innerHTML = `
+                {{#each meanings}}
+                    <div class="meaningContainer">
+                        <span class="count"><b>{{count}}&nbsp;&nbsp;</b></span><p class="meaningParagraph"> {{this.meaning}}</p><br>
+                    </div>
+                    <div class="meaningParagraph">
+                        {{#if this.examples}}
+                            <b><span class="eg">Eg.</span></b> 
+                            <p>{{this.examples}}</p><br>
+                            {{#else}}
+                                <br>
+                            {{/else}}
+                        {{/if}}
+                    </div>
+                {{/each}}
+        `
+    }
+
+    async  function showSynonyms(){
+        /*
+            Here we are waiting for fetch from loadData
+            to get the values first and then the rest of
+            code will compile to use the values set by loaddata()
+        */
+        await loadData();
+        var html = "";
+        for (var i = 0; i < synonyms.length; i++) {
+            if(synonyms[i] !== '')
+                if(i<9)
+                    html += `<div class="meaningContainer"><span><b>${i+1}.&nbsp;&nbsp;&nbsp;</b></span><p class= "meaningParagraph">` + synonyms[i] + `</p></div>`;
+                else
+                    html += `<div class="meaningContainer"><span><b>${i+1}.&nbsp;</b></span><p class= "meaningParagraph">` + synonyms[i] + `</p></div>`;
+           /*
+           //This is second design
+            html += `<span>` + synonyms[i] + `</span>`;
+            if(i != synonyms.length - 1) html += `,`
+            */
+        }
+
+        // This is when the array is empty
+        if(synonyms.length === 0 || html === '') html = `<p>No Synonyms Are Available</p>`
+
+        document.querySelector('.bodyContainer').innerHTML = `${html}`;
+    }
+   
+   
+    async  function showAntonyms(){
+        await loadData();
+        var html = "";
+        for (var i = 0; i < antonyms.length; i++) {
+            if(antonyms[i] !== '')
+                if(i<9)
+                    html += `<div class="meaningContainer"><span><b>${i+1}.&nbsp;&nbsp;&nbsp;</b></span><p class= "meaningParagraph">` + antonyms[i] + `</p></div>`;
+                else
+                    html += `<div class="meaningContainer"><span><b>${i+1}.&nbsp;</b></span><p class= "meaningParagraph">` + antonyms[i] + `</p></div>`;
+           /*
+           //This is second design
+            html += `<span>` + antonyms[i] + `</span>`;
+            if(i != antonyms.length - 1) html += `,`
+            */
+        }
+        // This is when the array is empty
+        if(antonyms.length === 0 || html === '') html = `<p>No Antonyms Are Available</p>`
+
+        document.querySelector('.bodyContainer').innerHTML = `${html}`;
+    }
+</script>

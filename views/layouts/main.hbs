@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/main.css" type="text/css" />
+    </head>
+    <body>
+        <div class="headContainer">
+
+            <h1 class="MainHeading">The Dictionary</h1>
+
+            {{! This is where we search the word }}
+            <form action="/" method="post">
+                <input id="box" type="text" name="search" />
+                {{countReset}}
+            </form>
+
+        </div>
+        {{! this is a template used by other renders }}
+        {{{body}}}
+
+        <script src="/main.js"></script>
+    </body>
+</html>

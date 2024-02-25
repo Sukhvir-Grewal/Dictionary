@@ -1,0 +1,18 @@
+{
+  "name": "dictonary",
+  "version": "1.0.0",
+  "description": "this is a small project to search the word meaning on webpage",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sukhvir",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "path": "^0.12.7"
+  }
+}

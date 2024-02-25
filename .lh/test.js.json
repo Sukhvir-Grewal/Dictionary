@@ -1,0 +1,26 @@
+{
+    "sourceFile": "test.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1708879444224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1708879534845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,14 @@\n     'X-RapidAPI-Host': 'img4me.p.rapidapi.com'\r\n   }\r\n };\r\n \r\n-try {\r\n-\tconst response = await axios.request(options);\r\n-\tconsole.log(response.data);\r\n-} catch (error) {\r\n-\tconsole.error(error);\r\n-}\n\\ No newline at end of file\n+async function fetchData() {\r\n+  try {\r\n+    const response = await axios.request(options);\r\n+    console.log(response.data);\r\n+  } catch (error) {\r\n+    console.error(error);\r\n+  }\r\n+}\r\n+\r\n+fetchData();\r\n"
+                },
+                {
+                    "date": 1708879542548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,4 +26,5 @@\n   }\r\n }\r\n \r\n fetchData();\r\n+np\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1708879444224,
+            "name": "Commit-0",
+            "content": "const axios = require('axios');\r\n\r\nconst options = {\r\n  method: 'GET',\r\n  url: 'https://img4me.p.rapidapi.com/',\r\n  params: {\r\n    text: 'Test Me',\r\n    font: 'trebuchet',\r\n    size: '12',\r\n    fcolor: '000000',\r\n    bcolor: 'FFFFFF',\r\n    type: 'png'\r\n  },\r\n  headers: {\r\n    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',\r\n    'X-RapidAPI-Host': 'img4me.p.rapidapi.com'\r\n  }\r\n};\r\n\r\ntry {\r\n\tconst response = await axios.request(options);\r\n\tconsole.log(response.data);\r\n} catch (error) {\r\n\tconsole.error(error);\r\n}"
+        }
+    ]
+}

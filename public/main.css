@@ -1,0 +1,80 @@
+* {
+    overflow: hidden;
+}
+body {
+    color: black;
+    background-size: cover;
+}
+
+.headContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.meaningContainer {
+    display: flex;
+    width: 100%;
+}
+.bodyContainer {
+    width: 800px;
+    height: 300px;
+    padding: 10px;
+    padding-left: 3px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.count {
+    width: 20px;
+    margin: 0 5px;
+    z-index: 10;
+}
+.eg {
+    margin: 0 10px;
+}
+
+.meaningParagraph {
+    width: 100%;
+    display: flex;
+}
+
+/* this helps to print the index and the meaning in same line */
+.MainHeading {
+    color: black;
+}
+
+.wordName {
+    display: inline-block;
+    margin: 5px;
+}
+.playbutton {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+.btn {
+    margin: 0 2px 0 2px;
+    outline: none !important;
+}
+.active-btn {
+    background-color: rgb(167, 167, 167);
+}
+
+@media (max-width: 600px) {
+    .bodyContainer {
+        width: 100%;
+    }
+}

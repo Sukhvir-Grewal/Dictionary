@@ -1,0 +1,22 @@
+{
+    "sourceFile": "views/test.hbs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1708819990773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1708820074683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+{{#if wordName}}\r\n+    {{#if meanings}}\r\n+    <div class=\"titleContainer\">\r\n+        <h2 class=\"wordName\">{{wordName}}</h2>\r\n+        <audio id=\"audio\" src={{audio}}></audio>\r\n+        <span class=\"glyphicon glyphicon-volume-up playbutton\" onclick=\"playAudio()\"></span>\r\n+    </div>\r\n+ \r\n+    <div class=\"buttons\" >\r\n+        <button class=\"btn\" onclick=\"showMeanings()\">Meaning</button>\r\n+        <button class=\"btn\" onclick=\"showSynonyms()\">Synonyms</button>\r\n+        <button class=\"btn\" onclick=\"showAntonyms()\">Antonyms</button>\r\n+    </div>\r\n+\r\n+        <div class=\"bodyContainer\">\r\n+                {{#each meanings}}\r\n+                    <div class=\"meaningContainer\">\r\n+                        <span class=\"count\"><b>{{count}}&nbsp;&nbsp;</b></span><p class=\"meaningParagraph\"> {{this.meaning}}</p><br>\r\n+                    </div>\r\n+                        {{#if this.examples}}\r\n+                            <div class=\"meaningParagraph\">\r\n+                                <b><span class=\"eg\">Eg.</span></b> \r\n+                                <p>{{this.examples}}</p><br>\r\n+                                {{#else}}\r\n+                                    <br>\r\n+                                {{/else}}\r\n+                            </div>\r\n+                        {{/if}}\r\n+                {{/each}}\r\n+            \r\n+        </div>\r\n+        {{else}}\r\n+            <div class=\"titleContainer\">\r\n+                <h2 class=\"wordName\">{{wordName}}</h2>\r\n+            </div>\r\n+            <div class=\"bodyContainer\">\r\n+                <p>{{error}}</p>\r\n+            </div>\r\n+        {{/if}}\r\n+{{/if}}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1708819990773,
+            "name": "Commit-0",
+            "content": "{{#if wordName}}\r\n  <div class=\"titleContainer\">\r\n    <h2 class=\"wordName\">{{wordName}}</h2>\r\n    <audio id=\"audio\" src={{audio}}></audio>\r\n    <span class=\"glyphicon glyphicon-volume-up playbutton\" onclick=\"playAudio()\"></span>\r\n  </div>\r\n\r\n  <div class=\"buttons\">\r\n    <button class=\"btn\" onclick=\"showMeanings()\">Meaning</button>\r\n    <button class=\"btn\" onclick=\"showSynonyms()\">Synonyms</button>\r\n    <button class=\"btn\" onclick=\"showAntonyms()\">Antonyms</button>\r\n  </div>\r\n\r\n  <div class=\"bodyContainer\">\r\n    {{#each meanings}}\r\n      <div class=\"meaningContainer\">\r\n        <span class=\"count\"><b>{{count}}&nbsp;&nbsp;</b></span>\r\n        <p class=\"meaningParagraph\">{{this.meaning}}</p><br>\r\n        {{#if this.examples}}\r\n          <div class=\"meaningParagraph\">\r\n            <b><span class=\"eg\">Eg.</span></b>\r\n            <p>{{this.examples}}</p><br>\r\n          </div>\r\n        {{/if}}\r\n      </div>\r\n    {{/each}}\r\n  </div>\r\n\r\n{{else}}\r\n  <div class=\"titleContainer\">\r\n    <h2 class=\"wordName\">{{wordName}}</h2>\r\n  </div>\r\n  <div class=\"bodyContainer\">\r\n    <p>{{error}}</p>\r\n  </div>\r\n{{/if}}\r\n"
+        }
+    ]
+}
